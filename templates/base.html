@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .card{
+        height: 500px;
+    }
+    label{
+        color: blue;
+    }
+    input{
+        padding: 2px;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-wrapper blue">
+
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1 class="blue-text">FORM</h1>
+            <div class="row">
+                <div class="col m12">
+                    <div class="">
+                        <div class="">
+                            <form action="">
+                                <div>
+                                    <label  for="name"><b>Name</b></label>
+                                    <input list="name-list"  type="text" name="" id="" placeholder="Enter your name">
+                                    <datalist id="name-list">
+                                        <select id="forms" multiple size="5" name="" id="">
+                                            <option value="Sai">Sai</option>
+                                            <option value="Will">Will</option>
+                                            <option value="Phoebe">Phoebe</option>
+                                            <option value="Sree">Sree</option>
+                                        </select>
+                                    </datalist>
+                                </div>
+                                <!---->
+                                <div>
+                                    <label for=""><b>Search Form</b></label>
+                                <input id="form-name" onchange="if(this.value == 'Budget Approval Form'){form1();}
+                                if(this.value == 'Reimbursement Form'){form2();}
+                                if(this.value == 'Purchase Order'){form3();}"
+                                type="text" list="form-list" placeholder="search for form" value="">
+                                    <datalist id="form-list">
+                                        <select id="forms" multiple size="5" name="" id="">
+                                            <option value="Budget Approval Form">Budget Approval Form</option>
+                                            <option value="Reimbursement Form">Reimbursement Form</option>
+                                            <option value="Purchase Order">Purchase Order</option>
+                                        </select>
+                                    </datalist>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <form action="">
+                                <div style="display: none" id="form-1">
+                                    <p class="flow-text blue-text">Budget Approval Form</p>
+                                    <table id="myTable1">
+                                        <th>Pupose</th>
+                                        <th>Request Date</th>
+                                        <th>Resquest Approval Date</th>
+                                        <th>Delivery Place</th>
+                                        <th>Add</th>
+                                        <tr>
+                                            <td><input onchange="this.textContent()" type="text" name="txtName" id="txtName" /></td>
+                                            <td><input type="text" name="txtAge" id="txtAge" /></td>
+                                            <td><input type="text" name="txtGender" id="txtGender" /></td>
+                                            <td><input type="text" name="txtOccupation" id="txtOccupation" /></td>
+                                            <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt1()" value="add"></td>
+                                        </tr>
+                                </table>
+                                <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
+                                </div>
+                                <div style="display: none" id="form-2">
+                                    <p class="flow-text blue-text">Reimbursement Form</p>
+                                    <table id="myTable2">
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Paid to</th>
+                                        <th>Payment Method</th>
+                                        <th>Details</th>
+                                        <th>Amount</th>
+                                        <th>Remarks</th>
+                                        <th>Subtotal</th>
+                                        <th>Total</th>
+                                        <tr>
+                                            <td><input type="text" name="date" id="txtName" /></td>
+                                            <td><input type="text" name="items" id="txtAge" /></td>
+                                            <td><input type="text" name="paid-to" id="txtGender" /></td>
+                                            <td><input type="text" name="pay-method" id="txtOccupation" /></td>
+                                            <td><input type="text" name="details" id="txtOccupation" /></td>
+                                            <td><input type="text" name="" id="txtOccupation" /></td>
+                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
+                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
+                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
+                                            <td><input type="button" id="btnAdd" class="btn button-add" onClick="insertRowt2()" value="add"></td>
+                                        </tr>
+                                </table>
+                                </div>
+                                <div style="display: none" id="form-3">
+                                    <p class="flow-text blue-text">Purchase Order</p>
+                                    <table id="myTable3">
+                                        <th>Purchase</th>
+                                        <th>Date of Purchase</th>
+                                        <th>Attention To</th>
+                                        <th>Contact Person</th>
+                                        <th>TEL</th>
+                                        <th>Venor</th>
+                                        <th>Contact Person</th>
+                                        <th>TEL</th>
+                                        <th>Delivery Date</th>
+                                        <th>Delivery Place</th>
+                                        <tr>
+                                            <td><input type="text" id="txtName" /></td>
+                                            <td><input type="text" id="txtAge" /></td>
+                                            <td><input type="text" id="txtGender" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt3()" value="add"></td>
+                                        </tr>
+                                </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script>
+
+
+
+                function form1() {
+                    document.getElementById("form-2").style.display = "none";
+                    document.getElementById("form-3").style.display = "none";
+                    var x = document.getElementById("form-1");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                    console.log("form-1")
+                }
+
+
+                function form2() {
+                    document.getElementById("form-1").style.display = "none";
+                    document.getElementById("form-3").style.display = "none";
+                    var x = document.getElementById("form-2");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+                function form3() {
+                    document.getElementById("form-1").style.display = "none";
+                    document.getElementById("form-2").style.display = "none";
+                    var x = document.getElementById("form-3");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+
+           var index = 1;
+    function insertRowt1(){
+                var table=document.getElementById("myTable1");
+                var row=table.insertRow(table.rows.length);
+                var cell1=row.insertCell(0);
+                var t1=document.createElement("input");
+                  t1.setAttribute("name", "txtName" + index )
+                    t1.id = "txtName"+index;
+                    cell1.appendChild(t1);
+                var cell2=row.insertCell(1);
+                var t2=document.createElement("input");
+                t2.setAttribute("name", "txtAge" + index )
+                    t2.id = "txtAge"+index;
+                    cell2.appendChild(t2);
+                var cell3=row.insertCell(2);
+                var t3=document.createElement("input");
+                t3.setAttribute("name", "txtGender" + index )
+                    t3.id = "txtGender"+index;
+                    cell3.appendChild(t3);
+                var cell4=row.insertCell(3);
+                var t4=document.createElement("input");
+                t4.setAttribute("name", "txtOccupation" + index )
+                    t4.id = "txtOccupation"+index;
+                    cell4.appendChild(t4);
+          index++;
+
+    }
+    function insertRowt2(){
+                var table=document.getElementById("myTable2");
+                var row=table.insertRow(table.rows.length);
+                var cell1=row.insertCell(0);
+                var t1=document.createElement("input");
+                t1.setAttribute("name", "txtName" + index )
+                    t1.id = "txtName"+index;
+                    cell1.appendChild(t1);
+                var cell2=row.insertCell(1);
+                var t2=document.createElement("input");
+                t2.setAttribute("name", "txtAge" + index )
+                    t2.id = "txtAge"+index;
+                    cell2.appendChild(t2);
+                var cell3=row.insertCell(2);
+                var t3=document.createElement("input");
+                t3.setAttribute("name", "txtGender" + index )
+                    t3.id = "txtGender"+index;
+                    cell3.appendChild(t3);
+                var cell4=row.insertCell(3);
+                var t4=document.createElement("input");
+                t4.setAttribute("name", "txtOccupation" + index )
+                    t4.id = "txtOccupation"+index;
+                    cell4.appendChild(t4);
+          index++;
+
+    }
+    function insertRowt3(){
+                var table=document.getElementById("myTable3");
+                var row=table.insertRow(table.rows.length);
+                var cell1=row.insertCell(0);
+                var t1=document.createElement("input");
+                t1.setAttribute("name", "txtName" + index )
+                    t1.id = "txtName"+index;
+                    cell1.appendChild(t1);
+                var cell2=row.insertCell(1);
+                var t2=document.createElement("input");
+                t2.setAttribute("name", "txtAge" + index )
+                    t2.id = "txtAge"+index;
+                    cell2.appendChild(t2);
+                var cell3=row.insertCell(2);
+                var t3=document.createElement("input");
+                t3.setAttribute("name", "txtGender" + index )
+                    t3.id = "txtGender"+index;
+                    cell3.appendChild(t3);
+                var cell4=row.insertCell(3);
+                var t4=document.createElement("input");
+                t4.setAttribute("name", "txtOccupation" + index )
+                    t4.id = "txtOccupation"+index;
+                    cell4.appendChild(t4);
+          index++;
+
+    }
+// pdf generation
+function demoFromHTML() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    // source can be HTML-formatted string, or a reference
+    // to an actual DOM element from which the text will be scraped.
+    source = $('#myTable1')[0];
+
+    // we support special element handlers. Register them with jQuery-style
+    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+    // There is no support for any other type of selectors
+    // (class, of compound) at this time.
+    specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        '#bypassme': function (element, renderer) {
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, // x coord
+    margins.top, { // y coord
+        'width': margins.width, // max width of content on PDF
+        'elementHandlers': specialElementHandlers
+    },
+
+    function (dispose) {
+        // dispose: object with X, Y of the last line add to the PDF
+        //          this allow the insertion of new lines after html
+        pdf.save('myTable.pdf');
+    }, margins);
+}
+</script>
+</body>
+</html>

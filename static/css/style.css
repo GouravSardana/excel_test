@@ -1,0 +1,125 @@
+.centering{
+margin-left:604px;
+margin-bottom:20px
+}
+@keyframes revolve {
+  0% {z-index:100; transform: translate(0px, 0px);}
+  25% {z-index:100;}
+  50% {z-index:100; transform: translate(100px, 100px);}
+  75% {z-index:0;}
+  100% {z-index:0; transform: translate(0px, 0px);}
+}
+@keyframes scale {
+  0% {transform: scale(0.5, 0.5);}
+  25% {transform: scale(1, 1);}
+  50% {transform: scale(0.5, 0.5);}
+  75% {transform: scale(0.2, 0.2);}
+  100% {transform: scale(0.5, 0.5);}
+}
+
+div.moon {
+  width:20px;
+  height:20px;
+  background-color:#53ad83;
+  animation: scale 3s cubic-bezier(0.500, 0.000, 0.500, 1.000) infinite both;
+  border-radius: 10px;
+}
+div.moon2 {
+  position:fixed;
+  animation: revolve 3s cubic-bezier(0.500, 0.000, 0.500, 1.000) infinite both;
+}
+
+div.obstacle {
+  z-index:50;
+  width:40px;
+  height:40px;
+  background-color:#0a4ab2;
+  position:absolute;
+  top:50px;
+  left:50px;
+  border-radius: 20px;
+}
+
+div.centering {
+  position:absolute;
+  top:35%;
+  left:45%;
+}
+
+  body {
+    font-family: Nunito;
+  }
+
+  nav {
+    background-color: #29d;
+  }
+
+  .tag-line {
+    font-size: 30px;
+  }
+
+  #btn {
+    background-color: white;
+    border: 3px solid #29d;
+    color: #29d;
+    border-radius: 30px;
+    margin: 0px 5px;
+  }
+
+  .parallax-container {
+    height: 200px;
+  }
+
+  #border-top {
+   border-bottom: 4px solid #29d;
+  }
+
+--------------
+body{
+        font-family: Nunito;
+
+      }
+      header h2{
+        border-bottom: 4px solid #29d;
+      }
+      #btn{
+        border-radius: 30px;
+        background-color: white;
+        border: 3px solid #29d;
+        margin: 5px 5px;
+        color: #29d;
+      }
+      h3{
+        border-bottom: 4px solid #29d;
+      }
+      label{
+        color: #29d;
+      }
+-------------------
+#icons {
+            color: #29d;
+        }
+
+        #icons a:hover {
+            color: black;
+        }
+       p{
+           font-size: 18px;
+       }
+       .nav{
+        background-color: #29d;
+       }
+       .btn-large{
+           background-color: white;
+           color: #29d;
+           border: 4px solid#29d;;
+           border-radius: 30px;
+       }
+       .btn-large:hover{
+           background-color:#29d;
+           color: white;
+       }
+       h3{
+           border-bottom: 4px solid#29d;
+       }
+------------
