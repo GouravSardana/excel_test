@@ -8,15 +8,27 @@
     <title>Form</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!--Google Fonts-->
+     <link href="https://fonts.googleapis.com/css?family=Anton|Cabin" rel="stylesheet">
     <style>
-        .card{
-        height: 500px;
-    }
+     .card{
+         height: 200px;
+     }
     label{
         color: blue;
     }
     input{
         padding: 2px;
+    }
+    h3{
+        font-family: Anton;
+    }
+    p{
+        font-family: Cabin;
+    }
+    label{
+        font-family: Cabin;
+        font-weight: bolder;
     }
     </style>
 </head>
@@ -28,12 +40,12 @@
         </nav>
     </header>
     <section>
-        <div class="container">
-            <h1 class="blue-text">FORM</h1>
+        <div class="">
+            <h3 class="blue-text center">FORM</h3>
             <div class="row">
-                <div class="col m12">
-                    <div class="">
-                        <div class="">
+                <div class="col m6">
+                    <div class="card">
+                        <div class="card-content">
                             <form action="">
                                 <div>
                                     <label  for="name"><b>Name</b></label>
@@ -66,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="col m12">
                     <div class="">
                         <div class="">
                             <form action="">
@@ -77,12 +89,32 @@
                                         <th>Request Date</th>
                                         <th>Resquest Approval Date</th>
                                         <th>Delivery Place</th>
+                                        <th>No</th>
+                                        <th>Vendor</th>
+                                        <th>Product</th>
+                                        <th>Spec or Duration</th>
+                                        <th>Quantity</th>
+                                        <th>Unit price</th>
+                                        <th>Total Price</th>
+                                        <th>Remarks</th>
+                                        <th>Total</th>
+
                                         <th>Add</th>
                                         <tr>
-                                            <td><input onchange="this.textContent()" type="text" name="txtName" id="txtName" /></td>
-                                            <td><input type="text" name="txtAge" id="txtAge" /></td>
-                                            <td><input type="text" name="txtGender" id="txtGender" /></td>
-                                            <td><input type="text" name="txtOccupation" id="txtOccupation" /></td>
+                                            <td><input onchange="this.textContent()" type="text" name="txtPurpose" id="txtName" /></td>
+                                            <td><input type="text" name="txtreqdate" id="txtAge" /></td>
+                                            <td><input type="text" name="txtreqappdate" id="txtGender" /></td>
+                                            <td><input type="text" name="txtdelivplace" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtno" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtvendor" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtproduct" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtspec" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtquant" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtunitprice" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotalprice" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtremarks" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotal" id="txtOccupation" /></td>
+
                                             <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt1()" value="add"></td>
                                         </tr>
                                 </table>
@@ -100,16 +132,17 @@
                                         <th>Remarks</th>
                                         <th>Subtotal</th>
                                         <th>Total</th>
+                                        <th>Add</th>
                                         <tr>
-                                            <td><input type="text" name="date" id="txtName" /></td>
-                                            <td><input type="text" name="items" id="txtAge" /></td>
-                                            <td><input type="text" name="paid-to" id="txtGender" /></td>
-                                            <td><input type="text" name="pay-method" id="txtOccupation" /></td>
-                                            <td><input type="text" name="details" id="txtOccupation" /></td>
-                                            <td><input type="text" name="" id="txtOccupation" /></td>
-                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
-                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
-                                            <td><input type="text" name="occupation" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtdate" id="txtName" /></td>
+                                            <td><input type="text" name="txtitems" id="txtAge" /></td>
+                                            <td><input type="text" name="txtpaidto" id="txtGender" /></td>
+                                            <td><input type="text" name="txtpaymethod" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtdetails" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtamount" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtremarks" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtsubtotal" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotal" id="txtOccupation" /></td>
                                             <td><input type="button" id="btnAdd" class="btn button-add" onClick="insertRowt2()" value="add"></td>
                                         </tr>
                                 </table>
@@ -127,16 +160,36 @@
                                         <th>TEL</th>
                                         <th>Delivery Date</th>
                                         <th>Delivery Place</th>
+                                        <th>No</th>
+                                        <th>Product</th>
+                                        <th>Spec</th>
+                                        <th>Unit</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Sum</th>
+                                        <th>Remark</th>
+                                        <th>Total</th>
+                                        <th>Add</th>
                                         <tr>
-                                            <td><input type="text" id="txtName" /></td>
-                                            <td><input type="text" id="txtAge" /></td>
-                                            <td><input type="text" id="txtGender" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
-                                            <td><input type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtpurchase" type="text" id="txtName" /></td>
+                                            <td><input name="txtdateofpurchase" type="text" id="txtAge" /></td>
+                                            <td><input name="txtattentionto" type="text" id="txtGender" /></td>
+                                            <td><input name="txtcontactperson" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txttel" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtvenor" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtcontactperson" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txttel" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtdeliverydate" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtdeliveryplace" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtno" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtproduct" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtspec" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtunit" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtquantity" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtunitprice" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtsum" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txtremark" type="text" id="txtOccupation" /></td>
+                                            <td><input name="txttotal" type="text" id="txtOccupation" /></td>
                                             <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt3()" value="add"></td>
                                         </tr>
                                 </table>
@@ -194,25 +247,73 @@
                 var row=table.insertRow(table.rows.length);
                 var cell1=row.insertCell(0);
                 var t1=document.createElement("input");
-                  t1.setAttribute("name", "txtName" + index )
+                  t1.setAttribute("name", "txtpurpose" + index )
                     t1.id = "txtName"+index;
                     cell1.appendChild(t1);
                 var cell2=row.insertCell(1);
                 var t2=document.createElement("input");
-                t2.setAttribute("name", "txtAge" + index )
+                t2.setAttribute("name", "txtreqdate" + index )
                     t2.id = "txtAge"+index;
                     cell2.appendChild(t2);
                 var cell3=row.insertCell(2);
                 var t3=document.createElement("input");
-                t3.setAttribute("name", "txtGender" + index )
+                t3.setAttribute("name", "txtdelivduedate" + index )
                     t3.id = "txtGender"+index;
                     cell3.appendChild(t3);
                 var cell4=row.insertCell(3);
                 var t4=document.createElement("input");
-                t4.setAttribute("name", "txtOccupation" + index )
+                t4.setAttribute("name", "txtdelivplace" + index )
                     t4.id = "txtOccupation"+index;
                     cell4.appendChild(t4);
+                    var cell5=row.insertCell(4);
+                var t5=document.createElement("input");
+                t5.setAttribute("name", "txtno" + index )
+                    t5.id = "txtOccupation"+index;
+                    cell5.appendChild(t5);
+                    var cell6=row.insertCell(5);
+                var t6=document.createElement("input");
+                t6.setAttribute("name", "txtvendor" + index )
+                    t6.id = "txtOccupation"+index;
+                    cell6.appendChild(t6);
+                    var cell7=row.insertCell(6);
+                var t7=document.createElement("input");
+                t7.setAttribute("name", "txtproduct" + index )
+                    t7.id = "txtOccupation"+index;
+                    cell7.appendChild(t7);
+                    var cell8=row.insertCell(7);
+                var t8=document.createElement("input");
+                t8.setAttribute("name", "txtspec" + index )
+                    t8.id = "txtOccupation"+index;
+                    cell8.appendChild(t8);
+                    var cell9=row.insertCell(8);
+                var t9=document.createElement("input");
+                t9.setAttribute("name", "txtquant" + index )
+                    t9.id = "txtOccupation"+index;
+                    cell9.appendChild(t9);
+                    var cell10=row.insertCell(9);
+                var t10=document.createElement("input");
+                t10.setAttribute("name", "txtunitprice" + index )
+                    t10.id = "txtOccupation"+index;
+                    cell10.appendChild(t10);
+                    var cell11=row.insertCell(10);
+                var t11=document.createElement("input");
+                t11.setAttribute("name", "txttotalprice" + index )
+                    t11.id = "txtOccupation"+index;
+                    cell11.appendChild(t11);
+                    var cell12=row.insertCell(11);
+                var t12=document.createElement("input");
+                t12.setAttribute("name", "txtremarks" + index )
+                    t12.id = "txtOccupation"+index;
+                    cell12.appendChild(t12);
+                    var cell13=row.insertCell(12);
+                var t13=document.createElement("input");
+                t13.setAttribute("name", "txttotal" + index )
+                    t13.id = "txtOccupation"+index;
+                    cell13.appendChild(t13);
+
+
           index++;
+          console.log("form 1 rows:" + index);
 
     }
     function insertRowt2(){
@@ -220,25 +321,51 @@
                 var row=table.insertRow(table.rows.length);
                 var cell1=row.insertCell(0);
                 var t1=document.createElement("input");
-                t1.setAttribute("name", "txtName" + index )
+                t1.setAttribute("name", "txtdate" + index )
                     t1.id = "txtName"+index;
                     cell1.appendChild(t1);
                 var cell2=row.insertCell(1);
                 var t2=document.createElement("input");
-                t2.setAttribute("name", "txtAge" + index )
+                t2.setAttribute("name", "txtitems" + index )
                     t2.id = "txtAge"+index;
                     cell2.appendChild(t2);
                 var cell3=row.insertCell(2);
                 var t3=document.createElement("input");
-                t3.setAttribute("name", "txtGender" + index )
+                t3.setAttribute("name", "txtpaidto" + index )
                     t3.id = "txtGender"+index;
                     cell3.appendChild(t3);
                 var cell4=row.insertCell(3);
                 var t4=document.createElement("input");
-                t4.setAttribute("name", "txtOccupation" + index )
+                t4.setAttribute("name", "txtpaymethod" + index )
                     t4.id = "txtOccupation"+index;
                     cell4.appendChild(t4);
+                    var cell5=row.insertCell(4);
+                var t5=document.createElement("input");
+                t5.setAttribute("name", "txtdetails" + index )
+                    t5.id = "txtOccupation"+index;
+                    cell5.appendChild(t5);
+                    var cell6=row.insertCell(5);
+                var t6=document.createElement("input");
+                t6.setAttribute("name", "txtamount" + index )
+                    t6.id = "txtOccupation"+index;
+                    cell6.appendChild(t6);
+                    var cell7=row.insertCell(6);
+                var t7=document.createElement("input");
+                t7.setAttribute("name", "txtremarks" + index )
+                    t7.id = "txtOccupation"+index;
+                    cell7.appendChild(t7);
+                    var cell8=row.insertCell(7);
+                var t8=document.createElement("input");
+                t8.setAttribute("name", "txtsubtotal" + index )
+                    t8.id = "txtOccupation"+index;
+                    cell8.appendChild(t8);
+                    var cell9=row.insertCell(8);
+                var t9=document.createElement("input");
+                t9.setAttribute("name", "txttotal" + index )
+                    t9.id = "txtOccupation"+index;
+                    cell9.appendChild(t9);
           index++;
+          console.log("form 2 rows:" + index);
 
     }
     function insertRowt3(){
@@ -246,25 +373,104 @@
                 var row=table.insertRow(table.rows.length);
                 var cell1=row.insertCell(0);
                 var t1=document.createElement("input");
-                t1.setAttribute("name", "txtName" + index )
+                t1.setAttribute("name", "txtpurchase" + index )
                     t1.id = "txtName"+index;
                     cell1.appendChild(t1);
                 var cell2=row.insertCell(1);
                 var t2=document.createElement("input");
-                t2.setAttribute("name", "txtAge" + index )
+                t2.setAttribute("name", "txtdateofpurchase" + index )
                     t2.id = "txtAge"+index;
                     cell2.appendChild(t2);
                 var cell3=row.insertCell(2);
                 var t3=document.createElement("input");
-                t3.setAttribute("name", "txtGender" + index )
+                t3.setAttribute("name", "txtattentionto" + index )
                     t3.id = "txtGender"+index;
                     cell3.appendChild(t3);
                 var cell4=row.insertCell(3);
                 var t4=document.createElement("input");
-                t4.setAttribute("name", "txtOccupation" + index )
+                t4.setAttribute("name", "txtcontactperson" + index )
                     t4.id = "txtOccupation"+index;
                     cell4.appendChild(t4);
+                    var cell5=row.insertCell(4);
+                var t5=document.createElement("input");
+                t5.setAttribute("name", "txttel" + index )
+                    t5.id = "txtOccupation"+index;
+                    cell5.appendChild(t5);
+                    var cell6=row.insertCell(5);
+                var t6=document.createElement("input");
+                t6.setAttribute("name", "txtvenor" + index )
+                    t6.id = "txtOccupation"+index;
+                    cell6.appendChild(t6);
+                    var cell7=row.insertCell(6);
+                var t7=document.createElement("input");
+                t7.setAttribute("name", "txtcontactperson" + index )
+                    t7.id = "txtOccupation"+index;
+                    cell7.appendChild(t7);
+                    var cell8=row.insertCell(7);
+                var t8=document.createElement("input");
+                t8.setAttribute("name", "txttel" + index )
+                    t8.id = "txtOccupation"+index;
+                    cell8.appendChild(t8);
+                    var cell9=row.insertCell(8);
+                var t9=document.createElement("input");
+                t9.setAttribute("name", "txtdeliverydate" + index )
+                    t9.id = "txtOccupation"+index;
+                    cell9.appendChild(t9);
+                    var cell10=row.insertCell(9);
+                var t10=document.createElement("input");
+                t10.setAttribute("name", "txtdeliveryplace" + index )
+                    t10.id = "txtOccupation"+index;
+                    cell10.appendChild(t10);
+                    var cell11=row.insertCell(10);
+                var t11=document.createElement("input");
+                t11.setAttribute("name", "txtno" + index )
+                    t11.id = "txtOccupation"+index;
+                    cell11.appendChild(t11);
+                    var cell12=row.insertCell(11);
+                var t12=document.createElement("input");
+                t12.setAttribute("name", "txtproduct" + index )
+                    t12.id = "txtOccupation"+index;
+                    cell12.appendChild(t12);
+                    var cell13=row.insertCell(12);
+                var t13=document.createElement("input");
+                t13.setAttribute("name", "txtspec" + index )
+                    t13.id = "txtOccupation"+index;
+                    cell13.appendChild(t13);
+                    var cell14=row.insertCell(13);
+                var t14=document.createElement("input");
+                t14.setAttribute("name", "txtunit" + index )
+                    t14.id = "txtOccupation"+index;
+                    cell14.appendChild(t14);
+                    var cell15=row.insertCell(14);
+                var t15=document.createElement("input");
+                t15.setAttribute("name", "txtquantity" + index )
+                    t15.id = "txtOccupation"+index;
+                    cell15.appendChild(t15);
+                    var cell16=row.insertCell(15);
+                var t16=document.createElement("input");
+                t16.setAttribute("name", "txtunitprice" + index )
+                    t16.id = "txtOccupation"+index;
+                    cell16.appendChild(t16);
+                    var cell17=row.insertCell(16);
+                var t17=document.createElement("input");
+                t17.setAttribute("name", "txtsum" + index )
+                    t17.id = "txtOccupation"+index;
+                    cell17.appendChild(t17);
+                    var cell18=row.insertCell(17);
+                var t18=document.createElement("input");
+                t18.setAttribute("name", "txtremark" + index )
+                    t18.id = "txtOccupation"+index;
+                    cell18.appendChild(t18);
+                    var cell19=row.insertCell(18);
+                var t19=document.createElement("input");
+                t19.setAttribute("name", "txttotal" + index )
+                    t19.id = "txtOccupation"+index;
+                    cell19.appendChild(t19);
+
+
+
           index++;
+          console.log("form 3 rows:" + index);
 
     }
 // pdf generation
