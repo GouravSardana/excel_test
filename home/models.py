@@ -15,6 +15,7 @@ class Budget_Approval(models.Model):
     name=models.ForeignKey(Person_name, on_delete=models.CASCADE)
     purpose=models.CharField(max_length=50)
     request_date=models.CharField(max_length=50)
+    request_approval_date=models.CharField(max_length=50)
     delivery_due_date = models.CharField(max_length=50)
     no = models.CharField(max_length=50)
     ventor = models.CharField(max_length=50)

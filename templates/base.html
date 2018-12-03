@@ -49,7 +49,7 @@
                             <form action="">
                                 <div>
                                     <label  for="name"><b>Name</b></label>
-                                    <input list="name-list"  type="text" name="" id="" placeholder="Enter your name">
+                                    <input list="name-list"  type="text" name="name" id="" placeholder="Enter your name">
                                     <datalist id="name-list">
                                         <select id="forms" multiple size="5" name="" id="">
                                             <option value="Sai">Sai</option>
@@ -61,6 +61,7 @@
                                 </div>
                                 <!---->
                                 <div>
+                                    <input id="index" type="" name="index" />
                                     <label for=""><b>Search Form</b></label>
                                 <input id="form-name" onchange="if(this.value == 'Budget Approval Form'){form1();}
                                 if(this.value == 'Reimbursement Form'){form2();}
@@ -119,6 +120,7 @@
                                         </tr>
                                 </table>
                                 <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
+                                    <button class="btn">Submit</button>
                                 </div>
                                 <div style="display: none" id="form-2">
                                     <p class="flow-text blue-text">Reimbursement Form</p>
@@ -243,6 +245,7 @@
 
            var index = 1;
     function insertRowt1(){
+
                 var table=document.getElementById("myTable1");
                 var row=table.insertRow(table.rows.length);
                 var cell1=row.insertCell(0);
@@ -314,6 +317,7 @@
 
           index++;
           console.log("form 1 rows:" + index);
+          document.getElementById("index").value = index;
 
     }
     function insertRowt2(){
@@ -366,6 +370,7 @@
                     cell9.appendChild(t9);
           index++;
           console.log("form 2 rows:" + index);
+          document.getElementById("index").value = index;
 
     }
     function insertRowt3(){
@@ -471,6 +476,7 @@
 
           index++;
           console.log("form 3 rows:" + index);
+          document.getElementById("index").value = index;
 
     }
 // pdf generation
