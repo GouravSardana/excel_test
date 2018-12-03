@@ -40,49 +40,64 @@
         </nav>
     </header>
     <section>
+        <form action="" method="post">
+            {% csrf_token %}
         <div class="">
             <h3 class="blue-text center">FORM</h3>
             <div class="row">
                 <div class="col m6">
                     <div class="card">
                         <div class="card-content">
-                            <form action="">
+
                                 <div>
-                                    <label  for="name"><b>Name</b></label>
-                                    <input list="name-list"  type="text" name="name" id="" placeholder="Enter your name">
-                                    <datalist id="name-list">
-                                        <select id="forms" multiple size="5" name="" id="">
-                                            <option value="Sai">Sai</option>
-                                            <option value="Will">Will</option>
-                                            <option value="Phoebe">Phoebe</option>
-                                            <option value="Sree">Sree</option>
-                                        </select>
-                                    </datalist>
+                                    <label for="Name"><b >Name</b></label>
+                                    <select id="name-select" required name="parameters" class="browser-default">
+                                        <option value="" disabled selected>Name</option>
+                                        <option value="sai">Sai</option>
+                                        <option value="Phenix">Phenix</option>
+                                        <option value="person3">person3</option>
+                                    </select>
+                                    <input id="name" type="hidden" name="name" />
+                                    <!--<label  for="name"><b>Name</b></label>-->
+                                    <!--<input list="name-list"  type="text" name="name" id="" placeholder="Enter your name">-->
+                                        <!--<select>-->
+                                            <!--<option value="Sai">Sai</option>-->
+                                            <!--<option value="Will">Will</option>-->
+                                            <!--<option value="Phoebe">Phoebe</option>-->
+                                            <!--<option value="Sree">Sree</option>-->
+                                        <!--</select>-->
                                 </div>
                                 <!---->
                                 <div>
-                                    <input id="index" type="" name="index" />
-                                    <label for=""><b>Search Form</b></label>
-                                <input id="form-name" onchange="if(this.value == 'Budget Approval Form'){form1();}
+                                    <label for="Search"><b >Search Form</b></label>
+                                    <select id="lol" onchange="if(this.value == 'Budget Approval Form'){form1();}
                                 if(this.value == 'Reimbursement Form'){form2();}
-                                if(this.value == 'Purchase Order'){form3();}"
-                                type="text" list="form-list" placeholder="search for form" value="">
-                                    <datalist id="form-list">
-                                        <select id="forms" multiple size="5" name="" id="">
-                                            <option value="Budget Approval Form">Budget Approval Form</option>
-                                            <option value="Reimbursement Form">Reimbursement Form</option>
-                                            <option value="Purchase Order">Purchase Order</option>
-                                        </select>
-                                    </datalist>
+                                if(this.value == 'Purchase Order'){form3();}" required name="parameters" class="browser-default">
+                                        <option value="" disabled selected>Search Form</option>
+                                        <option value="Budget Approval Form">Budget Approval Form</option>
+                                        <option value="Reimbursement Form">Reimbursement Form</option>
+                                        <option value="Purchase Order">Purchase Order</option>
+                                    </select>
+                                    <input id="index" type="hidden" name="index" />
+                                    <!--<label for=""><b>Search Form</b></label>-->
+                                <!--<input id="form-name" onchange="if(this.value == 'Budget Approval Form'){form1();}-->
+                                <!--if(this.value == 'Reimbursement Form'){form2();}-->
+                                <!--if(this.value == 'Purchase Order'){form3();}"-->
+                                <!--type="text" list="form-list" placeholder="search for form" value="">-->
+                                    <!--<datalist id="form-list">-->
+                                        <!--<select id="forms" multiple size="5" name="" id="">-->
+                                            <!--<option value="Budget Approval Form">Budget Approval Form</option>-->
+                                            <!--<option value="Reimbursement Form">Reimbursement Form</option>-->
+                                            <!--<option value="Purchase Order">Purchase Order</option>-->
+                                        <!--</select>-->
+                                    <!--</datalist>-->
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col m12">
                     <div class="">
                         <div class="">
-                            <form action="">
                                 <div style="display: none" id="form-1">
                                     <p class="flow-text blue-text">Budget Approval Form</p>
                                     <table id="myTable1">
@@ -102,25 +117,25 @@
 
                                         <th>Add</th>
                                         <tr>
-                                            <td><input onchange="this.textContent()" type="text" name="txtPurpose" id="txtName" /></td>
-                                            <td><input type="text" name="txtreqdate" id="txtAge" /></td>
-                                            <td><input type="text" name="txtreqappdate" id="txtGender" /></td>
-                                            <td><input type="text" name="txtdelivplace" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtno" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtvendor" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtproduct" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtspec" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtquant" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtunitprice" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txttotalprice" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtremarks" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txttotal" id="txtOccupation" /></td>
+                                            <td><input onchange="this.textContent()" type="text" name="txtpurpose1" id="txtName1" /></td>
+                                            <td><input type="text" name="txtreqdate1" id="txtAge" /></td>
+                                            <td><input type="text" name="txtreqappdate1" id="txtGender" /></td>
+                                            <td><input type="text" name="txtdelivplace1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtnol1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtvendor1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtproductt1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtspecc1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtquant1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtunitpricee1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotalprice1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtremarkk1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotalmoney1" id="txtOccupation" /></td>
 
                                             <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt1()" value="add"></td>
                                         </tr>
                                 </table>
                                 <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
-                                    <button class="btn">Submit</button>
+                                    <button class="btn" onclick="getGender();">Submit</button>
                                 </div>
                                 <div style="display: none" id="form-2">
                                     <p class="flow-text blue-text">Reimbursement Form</p>
@@ -136,18 +151,21 @@
                                         <th>Total</th>
                                         <th>Add</th>
                                         <tr>
-                                            <td><input type="text" name="txtdate" id="txtName" /></td>
-                                            <td><input type="text" name="txtitems" id="txtAge" /></td>
-                                            <td><input type="text" name="txtpaidto" id="txtGender" /></td>
-                                            <td><input type="text" name="txtpaymethod" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtdetails" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtamount" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtremarks" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txtsubtotal" id="txtOccupation" /></td>
-                                            <td><input type="text" name="txttotal" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtdate1" id="txtName" /></td>
+                                            <td><input type="text" name="txtitems1" id="txtAge" /></td>
+                                            <td><input type="text" name="txtpaidto1" id="txtGender" /></td>
+                                            <td><input type="text" name="txtpaymethod1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtdetails1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtamount1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtremarks1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txtsubtotal1" id="txtOccupation" /></td>
+                                            <td><input type="text" name="txttotal1" id="txtOccupation" /></td>
                                             <td><input type="button" id="btnAdd" class="btn button-add" onClick="insertRowt2()" value="add"></td>
                                         </tr>
+
                                 </table>
+                                    <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
+                                    <button class="btn" onclick="getGender();">Submit</button>
                                 </div>
                                 <div style="display: none" id="form-3">
                                     <p class="flow-text blue-text">Purchase Order</p>
@@ -195,13 +213,16 @@
                                             <td><input type="button" id="btnAdd" class=" btn button-add" onClick="insertRowt3()" value="add"></td>
                                         </tr>
                                 </table>
+                                    <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
+                                    <button class="btn" onclick="getGender();">Submit</button>
                                 </div>
-                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
@@ -243,9 +264,8 @@
                     }
                 }
 
-           var index = 1;
+           var index = 2;
     function insertRowt1(){
-
                 var table=document.getElementById("myTable1");
                 var row=table.insertRow(table.rows.length);
                 var cell1=row.insertCell(0);
@@ -270,7 +290,7 @@
                     cell4.appendChild(t4);
                     var cell5=row.insertCell(4);
                 var t5=document.createElement("input");
-                t5.setAttribute("name", "txtno" + index )
+                t5.setAttribute("name", "txtnol" + index )
                     t5.id = "txtOccupation"+index;
                     cell5.appendChild(t5);
                     var cell6=row.insertCell(5);
@@ -280,12 +300,12 @@
                     cell6.appendChild(t6);
                     var cell7=row.insertCell(6);
                 var t7=document.createElement("input");
-                t7.setAttribute("name", "txtproduct" + index )
+                t7.setAttribute("name", "txtproductt" + index )
                     t7.id = "txtOccupation"+index;
                     cell7.appendChild(t7);
                     var cell8=row.insertCell(7);
                 var t8=document.createElement("input");
-                t8.setAttribute("name", "txtspec" + index )
+                t8.setAttribute("name", "txtspecc" + index )
                     t8.id = "txtOccupation"+index;
                     cell8.appendChild(t8);
                     var cell9=row.insertCell(8);
@@ -295,7 +315,7 @@
                     cell9.appendChild(t9);
                     var cell10=row.insertCell(9);
                 var t10=document.createElement("input");
-                t10.setAttribute("name", "txtunitprice" + index )
+                t10.setAttribute("name", "txtunitpricee" + index )
                     t10.id = "txtOccupation"+index;
                     cell10.appendChild(t10);
                     var cell11=row.insertCell(10);
@@ -305,19 +325,19 @@
                     cell11.appendChild(t11);
                     var cell12=row.insertCell(11);
                 var t12=document.createElement("input");
-                t12.setAttribute("name", "txtremarks" + index )
+                t12.setAttribute("name", "txtremarkk" + index )
                     t12.id = "txtOccupation"+index;
                     cell12.appendChild(t12);
                     var cell13=row.insertCell(12);
                 var t13=document.createElement("input");
-                t13.setAttribute("name", "txttotal" + index )
+                t13.setAttribute("name", "txttotalmoney" + index )
                     t13.id = "txtOccupation"+index;
                     cell13.appendChild(t13);
 
 
           index++;
           console.log("form 1 rows:" + index);
-          document.getElementById("index").value = index;
+          document.getElementById("index").value = index-1;
 
     }
     function insertRowt2(){
@@ -370,7 +390,7 @@
                     cell9.appendChild(t9);
           index++;
           console.log("form 2 rows:" + index);
-          document.getElementById("index").value = index;
+          document.getElementById("index").value = index-1;
 
     }
     function insertRowt3(){
@@ -518,6 +538,12 @@ function demoFromHTML() {
         //          this allow the insertion of new lines after html
         pdf.save('myTable.pdf');
     }, margins);
+}
+
+
+function getGender(){
+    var name = document.getElementById("name-select").value;
+    document.getElementById("name").value = name;
 }
 </script>
 </body>
