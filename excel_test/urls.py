@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from home.views import Demo
+from home.views import Demo, Temporary, Temp_excel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Demo.as_view()),
+    path('a/', Temporary.as_view()),
+    path('b/', Temp_excel.as_view()),
 ]

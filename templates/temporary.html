@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+table, th, td {
+  border: solid 1px #000;
+  padding: 10px;
+}
+
+table {
+    border-collapse:collapse;
+    caption-side:bottom;
+    table-layout:auto;
+    width:auto;
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+      <div id="content">
+          <table id="demo" class="table table-bordered">
+              <thead>
+              <tr>
+                  <th>Team</th>
+                  <td>Team_name</td>
+              </tr>
+              </thead>
+          </table>
+          <table id="demo" class="table table-bordered">
+              <thead>
+              {% for i in f|slice:":1" %}
+              <tr>
+                  <th>Owner</th>
+                  <td>{{i.name}}</td>
+                  <th>Peroid of Expendeture</th>
+                  <td>data of period</td>
+                  <th>Sum</th>
+                  <td>Sum??</td>
+              </tr>
+              {% endfor %}
+              </thead>
+          </table>
+        <table id="demo" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Serial Number</th>
+              <th>Name</th>
+              <th>Percentile</th>
+                <th>Serial Number</th>
+              <th>Name</th>
+              <th>Percentile</th>
+                <th>Serial Number</th>
+              <th>Name</th>
+              <th>Percentile</th>
+                <th>Serial Number</th>
+              <th>Name</th>
+              <th>Percentile</th>
+
+            </tr>
+          </thead>
+            {% for i in f %}
+          <tbody>
+            <tr>
+              <td>{{i.purpose}}</td>
+              <td>{{i.request_date}}</td>
+              <td>{{i.delivery_due_date}}</td>
+              <td>{{i.number}}</td>
+              <td>{{i.ventor}}</td>
+              <td>{{i.product}}</td>
+              <td>{{i.spec}}</td>
+              <td>{{i.quantity}}</td>
+              <td>{{i.unit_price}}</td>
+              <td>{{i.total_price}}</td>
+              <td>{{i.remark}}</td>
+              <td>{{i.total}}</td>
+          </tbody>
+            {% endfor %}
+        </table>
+        <div>
+          <button class="btn" onclick="tablesToExcel(['testTable'], ['un'], 'myfile.xls')" id="export">Save</button>
+        </div>
+
+        <br>
+        <footer class="footer">Demo from https://jsfiddle.net/Purushoth/bor1nggb</footer>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<br>
+<script>
+    document.getElementById('export').addEventListener('click',
+  exportPDF);
+
+var specialElementHandlers = {
+  // element with id of "bypass" - jQuery style selector
+  '.no-export': function(element, renderer) {
+    // true = "handled elsewhere, bypass text extraction"
+    return true;
+  }
+};
+
+function exportPDF() {
+
+  var doc = new jsPDF('p', 'pt', 'a4');
+  //A4 - 595x842 pts
+  //https://www.gnu.org/software/gv/manual/html_node/Paper-Keywords-and-paper-size-in-points.html
+
+
+  //Html source
+  var source = document.getElementById('content').innerHTML;
+
+  var margins = {
+    top: 100,
+    bottom: 100,
+    left: 100,
+    width: 5950,
+  };
+
+  doc.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left,
+    margins.top, {
+      'width': margins.width,
+      'elementHandlers': specialElementHandlers
+    },
+
+    function(dispose) {
+      // dispose: object with X, Y of the last line add to the PDF
+      //          this allow the insertion of new lines after html
+      doc.save('Test.pdf');
+    }, margins);
+}
+
+
+
+
+
+</script>
+
+
+</body>
+<!--<body>-->
+<!--<div id="content">-->
+    <!--<h3 style="color:red">Sample h3 tag</h3>-->
+    <!--<p>Sample pararaph</p>-->
+  <!--<h1 style='color:red'>hey</h1>-->
+    <!--<h2>HTML Table</h2>-->
+<!--<table>-->
+    <!--<tr>-->
+        <!--<th>Team</th>-->
+        <!--<td>Sir Nick Jonos</td>-->
+
+    <!--</tr>-->
+<!--</table>-->
+    <!--<table>-->
+        <!--<tr>-->
+        <!--<th>Owner</th>-->
+        <!--<td>Sir Nick Jonos</td>-->
+        <!--<th>Period Of Expenditure</th>-->
+        <!--<td>lol date</td>-->
+        <!--<th>Sum</th>-->
+        <!--<td>sum rand</td>-->
+    <!--</tr>-->
+    <!--</table>-->
+<!--<table>-->
+  <!--<tr>-->
+    <!--<th>Owner</th>-->
+    <!--<th>Contact</th>-->
+    <!--<th>Country</th>-->
+<!--<th>Owner</th>-->
+    <!--<th>Contact</th>-->
+    <!--<th>Country</th>-->
+      <!--<th>Owner</th>-->
+    <!--<th>Contact</th>-->
+    <!--<th>Country</th>-->
+  <!--</tr>-->
+
+    <!--<td>Alfreds Futterkiste</td>-->
+    <!--<td>Maria Anders</td>-->
+    <!--<td>Germany</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Centro comercial Moctezuma</td>-->
+    <!--<td>Francisco Chang</td>-->
+    <!--<td>Mexico</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Ernst Handel</td>-->
+    <!--<td>Roland Mendel</td>-->
+    <!--<td>Austria</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Island Trading</td>-->
+    <!--<td>Helen Bennett</td>-->
+    <!--<td>UK</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Laughing Bacchus Winecellars</td>-->
+    <!--<td>Yoshi Tannamuri</td>-->
+    <!--<td>Canada</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Magazzini Alimentari Riuniti</td>-->
+    <!--<td>Giovanni Rovelli</td>-->
+    <!--<td>Italy</td>-->
+  <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>Magazzini Alimentari Riuniti</td>-->
+    <!--<td>Giovanni Rovelli</td>-->
+    <!--<td>Italy</td>-->
+  <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>Magazzini Alimentari Riuniti</td>-->
+    <!--<td>Giovanni Rovelli</td>-->
+    <!--<td>Italy</td>-->
+  <!--</tr>-->
+<!--</table>-->
+
+<!--</div>-->
+<!--<div id="editor">-->
+
+<!--</div>-->
+<!--<button id="cmd">Generate PDF</button>-->
+
+<!--<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>-->
+<!--<script>-->
+
+<!--var doc = new jsPDF();-->
+<!--var specialElementHandlers = {-->
+    <!--'#editor': function (element, renderer) {-->
+        <!--return true;-->
+    <!--}-->
+<!--};-->
+
+<!--$('#cmd').click(function () {-->
+    <!--doc.fromHTML($('#content').html(), 1, 105, {-->
+        <!--'width': 170,-->
+            <!--'elementHandlers': specialElementHandlers-->
+    <!--});-->
+    <!--doc.save('sample-file.pdf');-->
+<!--});-->
+
+<!--// This code is collected but useful, click below to jsfiddle link.-->
+
+<!--</script>-->
+<!--</body>-->
+</html>

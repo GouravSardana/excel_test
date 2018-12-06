@@ -70,6 +70,27 @@ class Purchase_order(models.Model):
         return self.name
 
 
+class TemporaryBudgetApproval(models.Model):
+    name=models.CharField(max_length=30)
+    purpose=models.CharField(max_length=50, blank=True)
+    request_date=models.CharField(max_length=50, blank=True)
+    request_approval_date=models.CharField(max_length=50, blank=True)
+    delivery_due_date = models.CharField(max_length=50, blank=True)
+    number= models.CharField(max_length=50, blank=True)
+    ventor = models.CharField(max_length=50, blank=True)
+    product = models.CharField(max_length=50, blank=True)
+    spec = models.CharField(max_length=50, blank=True)
+    quantity = models.CharField(max_length=50,blank=True)
+    unit_price = models.CharField(max_length=50, blank=True)
+    total_price = models.CharField(max_length=50, blank=True)
+    remark = models.CharField(max_length=50,blank=True)
+    total= models.CharField(max_length=50, blank=True)
+
+
+    def __str__(self):
+        return self.name
+
+
 
 
 
