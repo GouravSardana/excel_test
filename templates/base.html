@@ -79,6 +79,7 @@
                                         <option value="Purchase Order">Purchase Order</option>
                                     </select>
                                     <input id="index" type="hidden" name="index" />
+                                    <input id="form-name" type="hidden" name="form" />
                                     <!--<label for=""><b>Search Form</b></label>-->
                                 <!--<input id="form-name" onchange="if(this.value == 'Budget Approval Form'){form1();}-->
                                 <!--if(this.value == 'Reimbursement Form'){form2();}-->
@@ -135,7 +136,7 @@
                                         </tr>
                                 </table>
                                 <button class="btn" onclick="javascript:demoFromHTML();">Generate PDF</button>
-                                    <button class="btn" onclick="getGender();">Submit</button>
+                                    <button class="btn" onclick="getGender();getForm();">Submit</button>
                                 </div>
                                 <div style="display: none" id="form-2">
                                     <p class="flow-text blue-text">Reimbursement Form</p>
@@ -544,6 +545,10 @@ function demoFromHTML() {
 function getGender(){
     var name = document.getElementById("name-select").value;
     document.getElementById("name").value = name;
+}
+function getForm(){
+    var name = document.getElementById("lol").value;
+    document.getElementById("form-name").value = name;
 }
 </script>
 </body>
