@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from home.views import Demo, Temporary, Temp_excel
+from home.views import Demo, Temp_excel, Pdf_re_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Demo.as_view()),
-    path('a/', Temporary.as_view()),
-    path('b/', Temp_excel.as_view()),
+    # For pdf download
+    path('bu/', Temp_excel.as_view()),
+    path('re', Pdf_re_form.as_view())
 ]

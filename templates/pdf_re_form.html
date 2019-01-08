@@ -11,40 +11,34 @@
 </head>
 <body>
     <div class="" id="customers">
-        <p><b>Team Name: </b> x</p>
+        <p class="flow-text"><b>Team Name: </b> x</p>
         <div>
             <table id="tbl"  width="300%">
                 <thead>
                     <tr>
 
-                        <th>Purpose</th>
-                        <th width="200px">Request&nbsp;Date</th>
-                        <th width="275px">Request&nbsp;app.&nbsp;date</th>
-                        <th width="275px">delivery&nbsp;due&nbsp;date</th>
-                        <th>Ventor</th>
-                        <th>Product</th>
-                        <th>Spec</th>
-                        <th>Quantity</th>
-                        <th>Unit&nbsp;Price</th>
-                        <th>total&nbsp;price</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Paid</th>
+                        <th>Payment</th>
+                        <th>Detail</th>
+                        <th>Amount</th>
                         <th>Remark</th>
+                        <th>Sub-total</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 {% for i in f %}
                   <tbody>
                     <tr>
-                      <td>{{i.purpose}}</td>
-                      <td>{{i.request_date}}</td>
-                      <td>{{i.delivery_due_date}}</td>
-                      <td>{{i.number}}</td>
-                      <td>{{i.ventor}}</td>
-                      <td>{{i.product}}</td>
-                      <td>{{i.spec}}</td>
-                      <td>{{i.quantity}}</td>
-                      <td>{{i.unit_price}}</td>
-                      <td>{{i.total_price}}</td>
+                      <td>{{i.date}}</td>
+                      <td>{{i.item}}</td>
+                      <td>{{i.paid}}</td>
+                      <td>{{i.payment}}</td>
+                      <td>{{i.detail}}</td>
+                      <td>{{i.amount}}</td>
                       <td>{{i.remark}}</td>
+                      <td>{{i.subtotal}}</td>
                       <td>{{i.total}}</td>
                   </tbody>
                     {% endfor %}
@@ -57,7 +51,6 @@
 width:1400;
 font-size:7px;
 }
-
 </style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

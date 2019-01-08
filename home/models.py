@@ -32,15 +32,16 @@ class Budget_Approval(models.Model):
         return self.name
 
 class Reimbursement_form(models.Model):
-    date=models.CharField(max_length=50)
-    item=models.CharField(max_length=50)
-    paid= models.CharField(max_length=50)
-    payment = models.CharField(max_length=50)
-    detail = models.CharField(max_length=50)
-    amount = models.CharField(max_length=50)
-    remark= models.CharField(max_length=50)
-    subtotal = models.CharField(max_length=50)
-    total = models.CharField(max_length=50)
+    name = models.CharField(max_length=30)
+    date=models.CharField(max_length=50, blank=True, null=True)
+    item=models.CharField(max_length=50, blank=True, null=True)
+    paid= models.CharField(max_length=50, blank=True, null=True)
+    payment = models.CharField(max_length=50, blank=True, null=True)
+    detail = models.CharField(max_length=50, blank=True, null=True)
+    amount = models.CharField(max_length=50, blank=True, null=True)
+    remark= models.CharField(max_length=50, blank=True, null=True)
+    subtotal = models.CharField(max_length=50, blank=True, null=True)
+    total = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -91,6 +92,7 @@ class TemporaryBudgetApproval(models.Model):
         return self.name
 
 class Temporary_Reimbursement_form(models.Model):
+    name = models.CharField(max_length=30)
     date=models.CharField(max_length=50)
     item=models.CharField(max_length=50)
     paid= models.CharField(max_length=50)
