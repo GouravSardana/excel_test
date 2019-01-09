@@ -38,7 +38,7 @@ class Demo(TemplateView):
                 remark = self.request.POST.get('txtremarkk'+ str(i))
                 total = self.request.POST.get('txttotalmoney'+ str(i))
                 form=Budget_Approval(name=name, purpose=purpose, request_date=request_date, delivery_due_date=delivery_due_date, number=number, ventor=ventor, product=product, spec=spec, quantity=quantity,unit_price=unit_price, total_price=total_price, remark=remark, total=total)
-                form1=TemporaryBudgetApproval(purpose=purpose, request_date=request_date, delivery_due_date=delivery_due_date, number=number, ventor=ventor, product=product, spec=spec, quantity=quantity,unit_price=unit_price, total_price=total_price, remark=remark, total=total)
+                form1=TemporaryBudgetApproval(name=name,purpose=purpose, request_date=request_date, delivery_due_date=delivery_due_date, number=number, ventor=ventor, product=product, spec=spec, quantity=quantity,unit_price=unit_price, total_price=total_price, remark=remark, total=total)
                 form.save()
                 form1.save()
 
@@ -58,7 +58,25 @@ class Demo(TemplateView):
                 print(form)
                 form.save()
                 form1.save()
-
+        # elif form_name == 'Purchase Order':
+        #     for i in range(1, c+1):
+        #         purchase_no = self.request.POST.get('txtpurchase' + str(i))
+        #         date_of_purchase = self.request.POST.get('txtdateofpurchase' + str(i))
+        #         attension = self.request.POST.get('txtattentionto' + str(i))
+        #         contact_person = self.request.POST.get('txtcontactperson' + str(i))
+        #         tel = self.request.POST.get('txttel' + str(i))
+        #         ventor = self.request.POST.get('txtvenor' + str(i))
+        #         delivery_date = self.request.POST.get('txtdeliverydate' + str(i))
+        #         delivery_purchase = self.request.POST.get('txtsubtotal' + str(i))
+        #         no = self.request.POST.get('txtno' + str(i))
+        #         product = self.request.POST.get('txtdate' + str(i))
+        #         spec = self.request.POST.get('txtitems' + str(i))
+        #         unit = self.request.POST.get('txtpaidto' + str(i))
+        #         quantity = self.request.POST.get('txtpaymethod' + str(i))
+        #         unit_price = self.request.POST.get('txtdetails' + str(i))
+        #         sum = self.request.POST.get('txtamount' + str(i))
+        #         remark = self.request.POST.get('txtremarks' + str(i))
+        #         total = self.request.POST.get('txtsubtotal' + str(i))
         return HttpResponse('Done')
 
 

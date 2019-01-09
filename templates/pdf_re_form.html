@@ -11,7 +11,9 @@
 </head>
 <body>
     <div class="" id="customers">
-        <p class="flow-text"><b>Team Name: </b> x</p>
+        {% for i in f|slice:":1" %}
+        <p><b>Team Name: </b> {{i.name}}</p>
+        {% endfor %}
         <div>
             <table id="tbl"  width="300%">
                 <thead>
